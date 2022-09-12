@@ -2,7 +2,7 @@
 function App() {
   return (
     <div className="App">
-      liga feature
+      liga featureas
     </div>
   );
 }
