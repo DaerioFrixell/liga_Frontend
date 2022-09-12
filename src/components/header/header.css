@@ -1,0 +1,17 @@
+.sticky {
+  padding: 10px 50px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  position: sticky;
+  top: 0px;
+  background: rgb(252, 252, 252);
+  z-index: 1;
+}
+
+#linkOnLessonsList,
+#linkOnBlog,
+#unknow {
+  text-decoration: none;
+  color: inherit;
+}

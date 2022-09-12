@@ -1,0 +1,10 @@
+.logo {
+  text-decoration: none;
+  color: #333;
+}
+
+.navbar {
+  display: flex;
+  flex-grow: 1;
+  font-size: 36px;
+}

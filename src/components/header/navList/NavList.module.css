@@ -1,0 +1,8 @@
+.navbar {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  flex-grow: 4;
+}
