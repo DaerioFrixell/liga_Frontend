@@ -5,11 +5,11 @@ function NavInfo() {
   return (
     <div className={NavInfoCss.navbar}>
 
-      <a id="linkOnSMTH" href="https://www.youtube.com/channel/UC9m90Sc3jcV6dTOc1Ng56sw" target="_blank">
+      <a id="linkOnSMTH" href="https://www.youtube.com/channel/UC9m90Sc3jcV6dTOc1Ng56sw" >
         <div className={NavInfoCss.icon}></div>
       </a>
 
-      <a id="linkOnSMTH" href="https://www.youtube.com/channel/UC9m90Sc3jcV6dTOc1Ng56sw" target="_blank">
+      <a id="linkOnSMTH" href="https://www.youtube.com/channel/UC9m90Sc3jcV6dTOc1Ng56sw" >
         <div className={NavInfoCss.icon}></div>
       </a>
 
