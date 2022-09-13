@@ -1,7 +1,7 @@
 import React from "react";
 import './ThirdBlock.css';
 
-function ThirdBlock() {
+export const LendingForm = () => {
   return (
     <section className="section-from">
 
@@ -30,5 +30,3 @@ function ThirdBlock() {
     </section>
   );
 }
-
-export default ThirdBlock;

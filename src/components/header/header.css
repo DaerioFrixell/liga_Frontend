@@ -1,5 +1,5 @@
 .sticky {
-  padding: 10px 50px;
+  padding: .4rem 6rem;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-evenly;
@@ -7,11 +7,4 @@
   top: 0px;
   background: rgb(252, 252, 252);
   z-index: 1;
-}
-
-#linkOnLessonsList,
-#linkOnBlog,
-#unknow {
-  text-decoration: none;
-  color: inherit;
 }

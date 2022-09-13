@@ -1,15 +1,16 @@
 import React from 'react';
 import './lending.scss'
-import FirstBlock from './firstBlock/FirstBlock';
-import SecondBlock from './secondBlock/SecondBlock';
-import ThirdBlock from './thirdBlock/ThirdBlock';
+import { Offer } from './offer/Offer';
+import { LendingForm } from './form/LendingForm';
+import { Feedbacks } from './feedbacks/Feedbacks';
 
 function Lending() {
   return (
     <div className='lending'>
-      <FirstBlock />
-      <SecondBlock />
-      <ThirdBlock />
+      <Offer />
+      <Feedbacks></Feedbacks>
+      <LendingForm />
+
     </div>
   );
 }
