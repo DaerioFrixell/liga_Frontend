@@ -3,7 +3,7 @@ import './ThirdBlock.css';
 
 export const LendingForm = () => {
   return (
-    <section className="section-from">
+    <section className="lending-from">
 
       <h2 className="checkMe">Запишись на беспланый пробный урок</h2>
       <form >

@@ -1,5 +1,42 @@
 .feedbacks {
+  height: 200px;
+
+  margin: 0rem auto;
+  padding-top: 3rem;
+  width: 90vw;
+
   display: flex;
   justify-content: space-between;
-  margin-bottom: 3rem;
+
+  &__arrow-left {
+    background: url(../../../styles/img/arrow.png);
+
+    background-blend-mode: overlay;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    transform: rotate(180deg);
+    opacity: .6;
+    transition: opacity .4s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__arrow-right {
+    background-image: url(../../../styles/img/arrow.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    opacity: .6;
+    transition: opacity .4s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
 }

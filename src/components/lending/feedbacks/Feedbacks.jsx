@@ -5,11 +5,11 @@ import "./feedbacks.scss"
 export const Feedbacks = () => {
   return (
     <section className="feedbacks">
-      <p>|--</p>
+      <div className="feedbacks__arrow-left"></div>
       <Feedback />
       <Feedback />
       <Feedback />
-      <p>--|</p>
+      <div className="feedbacks__arrow-right"></div>
     </section>
   )
 }

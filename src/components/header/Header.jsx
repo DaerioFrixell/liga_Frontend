@@ -1,10 +1,10 @@
 import React from 'react';
-import '../header/header.css';
+import './header.scss';
 import Logo from './logo/Logo';
 import NavList from './navList/NavList';
 import NavInfo from './navInfo/NavInfo';
 
-function Header() {
+export const Header = () => {
   return (
     <header className="sticky">
       <Logo />
@@ -13,5 +13,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;

@@ -13,7 +13,7 @@ function NavInfo() {
         <div className={NavInfoCss.icon}></div>
       </a>
 
-      <div>+7-986-951-04-69</div>
+      <p>+7-986-951-04-69</p>
 
     </div>
   );

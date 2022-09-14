@@ -1,4 +1,16 @@
+.bg {
+  // position: relative;
+  height: 100vh;
+  background: url(./BGphoto.JPG), rgba(21, 21, 21, 0.623);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  z-index: -1;
+  opacity: .9;
+}
+
 .lending {
   margin: 0rem auto;
-  width: 80vw;
+  width: 90vw;
+
 }

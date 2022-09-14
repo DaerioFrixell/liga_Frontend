@@ -1,10 +1,10 @@
 .logo {
   text-decoration: none;
   color: #333;
+  font-size: 6rem;
 }
 
 .navbar {
   display: flex;
   flex-grow: 1;
-  font-size: 36px;
 }

@@ -1,3 +1,9 @@
+.lending-from {
+  margin: 0rem auto;
+  width: 90vw;
+  height: 400px;
+}
+
 .form-item {
   display: flex;
   flex-direction: column;
