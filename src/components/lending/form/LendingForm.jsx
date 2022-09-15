@@ -3,9 +3,9 @@ import './ThirdBlock.css';
 
 export const LendingForm = () => {
   return (
-    <section className="lending-from">
+    <section id="lendingForm" className="lending-from">
 
-      <h2 id="eeee" className="checkMe">Запишись на беспланый пробный урок</h2>
+      <h2 className="checkMe">Запишись на беспланый пробный урок</h2>
       <form >
         <div className="form-item">
           <label className="form-label">имя</label>

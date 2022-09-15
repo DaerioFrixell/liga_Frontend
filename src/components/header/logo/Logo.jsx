@@ -1,19 +1,19 @@
 import React from "react";
-import LogoCss from './logo.module.css';
+import './logo.scss';
 import { Link } from "react-scroll";
 import { linkDuration } from '../../setting/smoothLink'
 
 function Logo() {
 
   return (
-    <div id='/' className={LogoCss.navbar}>
+    <div id='home' className="logo">
       <Link
-        className={LogoCss.logo}
-        to='/'
-        spy={true}
+        className="logo__link"
+        to='home'
         smooth={true}
-        offset={-1000}
+        spy={true}
         duration={linkDuration}
+        offset={-2000}
       >Liga School</Link>
     </div>
   );

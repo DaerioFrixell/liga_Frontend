@@ -1,46 +1,51 @@
 import React from "react";
-import NavListCss from './NavList.module.css';
+import './navList.scss';
 import { Link } from "react-scroll";
+import { linkDuration, linkOffset } from '../../setting/smoothLink'
 
-import { linkDuration } from '../../setting/smoothLink'
-
-function NavList() {
+export function NavList() {
 
   return (
-    <div className={NavListCss.navbar}>
+    <div className='navbar'>
       <Link
+        className="navbar__link"
+        activeClass="navbar__link--active"
         to='feedbacks'
         smooth={true}
-        duration={linkDuration}
         spy={true}
-        offset={0}
+        duration={linkDuration}
+        offset={linkOffset}
       >отзывы</Link>
 
       <Link
+        className="navbar__link"
+        activeClass="navbar__link--active"
         to='priceBlock'
         smooth={true}
-        duration={linkDuration}
         spy={true}
-        offset={0}
+        duration={linkDuration}
+        offset={linkOffset}
       >цены</Link>
 
       <Link
+        className="navbar__link"
+        activeClass="navbar__link--active"
         to='availableTimeBlock'
         smooth={true}
-        duration={linkDuration}
         spy={true}
-        offset={0}
+        duration={linkDuration}
+        offset={linkOffset}
       >свободное время</Link>
 
       <Link
+        className="navbar__link"
+        activeClass="navbar__link--active"
         to='lendingForm'
         smooth={true}
-        duration={linkDuration}
         spy={true}
-        offset={0}
+        duration={linkDuration}
+        offset={linkOffset}
       >пробный урок</Link>
     </div >
   );
 }
-
-export default NavList;

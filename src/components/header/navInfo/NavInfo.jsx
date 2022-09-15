@@ -1,19 +1,19 @@
 import React from "react";
-import NavInfoCss from './NavInfo.module.css';
+import './navInfo.scss';
 
 function NavInfo() {
   return (
-    <div className={NavInfoCss.navbar}>
+    <div className="nav-info">
 
       <a id="linkOnSMTH" href="https://www.youtube.com/channel/UC9m90Sc3jcV6dTOc1Ng56sw" >
-        <div className={NavInfoCss.icon}></div>
+        <div className="nav-info__icon"></div>
       </a>
 
       <a id="linkOnSMTH" href="https://www.youtube.com/channel/UC9m90Sc3jcV6dTOc1Ng56sw" >
-        <div className={NavInfoCss.icon}></div>
+        <div className="nav-info__icon"></div>
       </a>
 
-      <p>+7-986-951-04-69</p>
+      <p className="nav-info__phone">+7-986-951-04-69</p>
 
     </div>
   );
