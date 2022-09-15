@@ -4,7 +4,7 @@ import './price.scss';
 export const Price = () => {
   return (
     <div className="price">
-      <p className="price__title">цены</p>
+      <h2 className="price__title">цены</h2>
 
       <div className="price__less">
         <p className="price__less__price">2000 рублей</p>
