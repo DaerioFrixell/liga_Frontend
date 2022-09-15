@@ -10,8 +10,9 @@ import { AvailableTime } from './availableTime/AvailableTime';
 function Lending() {
   return (
     <>
+      <Header />
       <div className='bg'>
-        <Header />
+
         <div className='lending'>
           <Offer />
         </div>
