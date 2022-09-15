@@ -9,15 +9,36 @@ function NavList() {
   return (
     <div className={NavListCss.navbar}>
       <Link
-        to='eeee'
-        // spy={true}
+        to='feedbacks'
         smooth={true}
-        // offset={0}
         duration={linkDuration}
-      >пробный урок</Link>
+        spy={true}
+        offset={0}
+      >отзывы</Link>
 
-      <p>абонементы</p>
-      <p>адрес</p>
+      <Link
+        to='price'
+        smooth={true}
+        duration={linkDuration}
+        spy={true}
+        offset={0}
+      >цены</Link>
+
+      <Link
+        to='availableTime'
+        smooth={true}
+        duration={linkDuration}
+        spy={true}
+        offset={0}
+      >свободное время</Link>
+
+      <Link
+        to='les'
+        smooth={true}
+        duration={linkDuration}
+        spy={true}
+        offset={0}
+      >пробный урок</Link>
     </div >
   );
 }
