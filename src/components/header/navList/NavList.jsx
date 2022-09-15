@@ -17,7 +17,7 @@ function NavList() {
       >отзывы</Link>
 
       <Link
-        to='price'
+        to='priceBlock'
         smooth={true}
         duration={linkDuration}
         spy={true}
@@ -25,7 +25,7 @@ function NavList() {
       >цены</Link>
 
       <Link
-        to='availableTime'
+        to='availableTimeBlock'
         smooth={true}
         duration={linkDuration}
         spy={true}
@@ -33,7 +33,7 @@ function NavList() {
       >свободное время</Link>
 
       <Link
-        to='les'
+        to='lendingForm'
         smooth={true}
         duration={linkDuration}
         spy={true}

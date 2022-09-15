@@ -3,7 +3,7 @@ import "./availableTime.scss";
 
 export const AvailableTime = () => {
   return (
-    <div className="time">
+    <div id="availableTimeBlock" className="time">
       <h2 className="time__title">свободное время</h2>
       <div className="time__day">
         <p className="time__day__item-d">понедельник</p>

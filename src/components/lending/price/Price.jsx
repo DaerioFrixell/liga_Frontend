@@ -3,7 +3,7 @@ import './price.scss';
 
 export const Price = () => {
   return (
-    <div className="price">
+    <div id="priceBlock" className="price">
       <h2 className="price__title">цены</h2>
 
       <div className="price__less">
