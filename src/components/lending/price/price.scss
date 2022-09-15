@@ -1,0 +1,24 @@
+@import '../../../styles/wrapperStyle.scss';
+
+.price {
+  @include wrapperStyle;
+  height: 30vh;
+  display: grid;
+  grid-template-rows: 100px 100px 100px;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  padding-left: 20rem;
+
+  &__less45 {
+    display: grid;
+    // grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__less60 {
+    display: grid;
+    // grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
