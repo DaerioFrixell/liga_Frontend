@@ -4,6 +4,8 @@ import { Header } from '../header/Header';
 import { Offer } from './offer/Offer';
 import { LendingForm } from './form/LendingForm';
 import { Feedbacks } from './feedbacks/Feedbacks';
+import { Price } from './price/Price';
+import { AvailableTime } from './availableTime/AvailableTime';
 
 function Lending() {
   return (
@@ -15,6 +17,8 @@ function Lending() {
         </div>
       </div>
       <Feedbacks />
+      <Price />
+      <AvailableTime />
       <LendingForm />
     </>
   );

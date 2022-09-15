@@ -15,9 +15,9 @@ function NavList() {
         // offset={0}
         duration={linkDuration}
       >пробный урок</Link>
+
       <p>абонементы</p>
       <p>адрес</p>
-      <p>свободное время</p>
     </div >
   );
 }
