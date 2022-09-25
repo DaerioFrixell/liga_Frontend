@@ -13,7 +13,7 @@ export const Offer = () => {
       <p className='offer__text'>
         скидка на первый абонемент 30% + бесплатный доступ в телеграм-канал!
       </p>
-      <LendingButton />
+      <LendingButton nameBtn={'записаться на пробный урок'} />
     </div>
   );
 }

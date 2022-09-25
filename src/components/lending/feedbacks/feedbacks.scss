@@ -1,42 +1,41 @@
+@import '../../../styles/wrapperStyle.scss';
+
 .feedbacks {
-  height: 200px;
+  @include wrapperStyle;
+  height: 40vh;
 
-  margin: 0rem auto;
-  padding-top: 3rem;
-  width: 90vw;
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    min-height: 100px;
 
-  display: flex;
-  justify-content: space-between;
+    &__arrow {
+      background: url(../../../styles/img/arrow.png);
+      background-blend-mode: overlay;
+      background-size: contain;
+      background-repeat: no-repeat;
+      border: none;
+      width: 30px;
+      height: 30px;
+      opacity: .6;
+      // margin-top: auto;
+      transition: opacity, scale .4s;
+      margin: auto;
 
-  &__arrow-left {
-    background: url(../../../styles/img/arrow.png);
+      &:hover {
+        opacity: 1;
+      }
 
-    background-blend-mode: overlay;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 30px;
-    height: 30px;
-    transform: rotate(180deg);
-    opacity: .6;
-    transition: opacity .4s;
+      &:active {
+        scale: 110%;
+      }
+    }
 
-    &:hover {
-      opacity: 1;
+    .a-left {
+      // grid-column: 4/6;
+      transform: rotate(180deg);
     }
   }
 
-  &__arrow-right {
-    background-image: url(../../../styles/img/arrow.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 30px;
-    height: 30px;
-    opacity: .6;
-    transition: opacity .4s;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
 
 }

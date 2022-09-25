@@ -1,8 +1,8 @@
 import React from "react";
 import "./lendingButton.scss"
 
-export const LendingButton = () => {
+export const LendingButton = ({ nameBtn }) => {
   return (
-    <button className="lending-button">записаться на пробный урок</button>
+    <button className="lending-button">{nameBtn}</button>
   )
 }

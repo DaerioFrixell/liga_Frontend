@@ -7,17 +7,25 @@ import { Feedbacks } from './feedbacks/Feedbacks';
 import { Price } from './price/Price';
 import { AvailableTime } from './availableTime/AvailableTime';
 
-function Lending() {
+function Lending({
+  feedbacks,
+  feedState,
+  setFeedState,
+  arrNum,
+  setArrNum
+}) {
   return (
     <>
       <Header />
       <div className='bg'>
-
-        <div className='lending'>
-          <Offer />
-        </div>
+        <Offer />
       </div>
-      <Feedbacks />
+      <Feedbacks
+        feedbacks={feedbacks}
+        feedState={feedState}
+        setFeedState={setFeedState}
+        arrNum={arrNum}
+        setArrNum={setArrNum} />
       <Price />
       <AvailableTime />
       <LendingForm />
