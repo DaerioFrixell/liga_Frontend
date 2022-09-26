@@ -3,29 +3,18 @@ import './lending.scss'
 import { Header } from '../header/Header';
 import { Offer } from './offer/Offer';
 import { LendingForm } from './form/LendingForm';
-import { Feedbacks } from './feedbacks/Feedbacks';
+import Feedbacks from './feedbacks/Feedbacks';
 import { Price } from './price/Price';
 import { AvailableTime } from './availableTime/AvailableTime';
 
-function Lending({
-  feedbacks,
-  feedState,
-  setFeedState,
-  arrNum,
-  setArrNum
-}) {
+function Lending() {
   return (
     <>
       <Header />
       <div className='bg'>
         <Offer />
       </div>
-      <Feedbacks
-        feedbacks={feedbacks}
-        feedState={feedState}
-        setFeedState={setFeedState}
-        arrNum={arrNum}
-        setArrNum={setArrNum} />
+      <Feedbacks />
       <Price />
       <AvailableTime />
       <LendingForm />

@@ -1,41 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { Feedback } from "./feedback/Feedback";
-import "./feedbacks.scss"
+import { connect } from "react-redux";
+import "./feedbacks.scss";
 
-export const Feedbacks = ({
-  feedbacks,
-  feedState,
-  setFeedState,
-  arrNum,
-  setArrNum }) => {
+const Feedbacks = ({ syncFeedbacks }) => {
+  const [numberFeedback, setNumberFeedback] = useState(0)
+  const [feedState, setFeedState] = useState(syncFeedbacks[numberFeedback])
 
   const next = () => {
-    if (arrNum === feedbacks.length - 1) {
-      arrNum = 0
-      setArrNum(arrNum)
-      setFeedState(feedbacks[arrNum])
+    if (numberFeedback === syncFeedbacks.length - 1) {
+      setNumberFeedback(0)
+      setFeedState(syncFeedbacks[0])
     } else {
-      arrNum = arrNum + 1
-      setArrNum(arrNum)
-      setFeedState(feedbacks[arrNum])
+      let index = numberFeedback;
+      index += 1;
+      setNumberFeedback(index)
+      setFeedState(syncFeedbacks[index])
     }
   }
 
   const prev = () => {
-    if (feedbacks[arrNum].id === 1) {
-      arrNum = feedbacks.length - 1;
-      setArrNum(arrNum);
-      setFeedState(feedbacks[arrNum])
+    if (numberFeedback === 0) {
+      setNumberFeedback(syncFeedbacks.length - 1)
+      setFeedState(syncFeedbacks[syncFeedbacks.length - 1])
     } else {
-      arrNum = arrNum - 1
-      setArrNum(arrNum)
-      setFeedState(feedbacks[arrNum])
+      let index = numberFeedback;
+      index -= 1;
+      setNumberFeedback(index)
+      setFeedState(syncFeedbacks[index])
     }
   }
 
   return (
     <section className="feedbacks">
       <h2 className="we">Отзывы</h2>
+
       <div className="feedbacks__wrapper">
         <button
           className="feedbacks__wrapper__arrow a-left"
@@ -45,8 +44,14 @@ export const Feedbacks = ({
           className="feedbacks__wrapper__arrow a-right"
           onClick={next}></button>
       </div>
-
-
     </section>
   )
 }
+
+const mapStateToProps = state => {
+  return {
+    syncFeedbacks: state.feedbacks.feedbacks
+  }
+}
+
+export default connect(mapStateToProps, null)(Feedbacks);
