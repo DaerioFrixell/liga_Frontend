@@ -1,34 +1,48 @@
 import React, { useState } from "react";
 import { Feedback } from "./feedback/Feedback";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import "./feedbacks.scss";
+import { addFeedbackAction } from "../../../redux/action";
 
-const Feedbacks = ({ syncFeedbacks }) => {
-  const [numberFeedback, setNumberFeedback] = useState(0)
-  const [feedState, setFeedState] = useState(syncFeedbacks[numberFeedback])
+const Feedbacks = ({ feedbacksArr }) => {
+  const [numberFeedbacksArr, setNumberFeedbacksArr] = useState(0)
+  const [feedState, setFeedState] = useState(feedbacksArr[numberFeedbacksArr])
 
   const next = () => {
-    if (numberFeedback === syncFeedbacks.length - 1) {
-      setNumberFeedback(0)
-      setFeedState(syncFeedbacks[0])
+    if (numberFeedbacksArr === feedbacksArr.length - 1) {
+      setNumberFeedbacksArr(0)
+      setFeedState(feedbacksArr[0])
     } else {
-      let index = numberFeedback;
+      let index = numberFeedbacksArr;
       index += 1;
-      setNumberFeedback(index)
-      setFeedState(syncFeedbacks[index])
+      setNumberFeedbacksArr(index)
+      setFeedState(feedbacksArr[index])
     }
   }
 
   const prev = () => {
-    if (numberFeedback === 0) {
-      setNumberFeedback(syncFeedbacks.length - 1)
-      setFeedState(syncFeedbacks[syncFeedbacks.length - 1])
+    if (numberFeedbacksArr === 0) {
+      setNumberFeedbacksArr(feedbacksArr.length - 1)
+      setFeedState(feedbacksArr[feedbacksArr.length - 1])
     } else {
-      let index = numberFeedback;
+      let index = numberFeedbacksArr;
       index -= 1;
-      setNumberFeedback(index)
-      setFeedState(syncFeedbacks[index])
+      setNumberFeedbacksArr(index)
+      setFeedState(feedbacksArr[index])
     }
+  }
+
+  const newFeedback = {
+    id: 10,
+    author: 'Daerio Frixell',
+    description: `1. Автор, это просто ааааааааааааааааааааааааааааааааааааа ааааааааааааааааааа аааа-аааааааааа аааааааааааааа аааааааааааааааааааааааааааа ааааааааааааа ааааааааааааа-ааааааааааааааа
+    2. Здравствуйте, автор, ваша книга мне понравилась, особенно вот этот момент: цитата на полглавы
+    3. Ах, какой хороший роман, он мне напомнил, как я прошлым летом...изливает душу на - ти абзацах`
+  }
+
+  const dispatch = useDispatch();
+  const addNewFeedback = () => {
+    dispatch(addFeedbackAction(newFeedback))
   }
 
   return (
@@ -44,13 +58,22 @@ const Feedbacks = ({ syncFeedbacks }) => {
           className="feedbacks__wrapper__arrow a-right"
           onClick={next}></button>
       </div>
+
+      <div className="feedbacks__add"  >
+        <input className="feedbacks__add__name" placeholder="как вас зовут?" />
+        <button
+          className="feedbacks__add__btn"
+          onClick={addNewFeedback}
+        >оставить отзыв</button>
+        <textarea className="feedbacks__add__description" placeholder="напишите что-то"></textarea>
+      </div>
     </section>
   )
 }
 
 const mapStateToProps = state => {
   return {
-    syncFeedbacks: state.feedbacks.feedbacks
+    feedbacksArr: state.feedbacks.feedbacks
   }
 }
 

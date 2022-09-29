@@ -6,7 +6,7 @@ import { linkDuration, linkOffset } from '../../setting/smoothLink'
 export function NavList() {
 
   return (
-    <div className='navbar'>
+    <nav className='navbar'>
       <Link
         className="navbar__link"
         activeClass="navbar__link--active"
@@ -45,7 +45,7 @@ export function NavList() {
         spy={true}
         duration={linkDuration}
         offset={linkOffset}
-      >пробный урок</Link>
-    </div >
+      >записаться</Link>
+    </nav >
   );
 }
