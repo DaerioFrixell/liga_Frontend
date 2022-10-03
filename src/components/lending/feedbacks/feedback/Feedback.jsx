@@ -1,11 +1,11 @@
 import React from 'react';
 import './feedback.scss';
 
-export const Feedback = ({ feedState }) => {
+export const Feedback = ({ viewFeedback }) => {
   return (
     <div className='feedback'>
-      <p className='feedback__author'>{feedState.author}</p>
-      <p className='feedback__description'>{feedState.description}</p>
+      <p className='feedback__author'>{viewFeedback.author}</p>
+      <p className='feedback__description'>{viewFeedback.description}</p>
     </div>
   )
 }

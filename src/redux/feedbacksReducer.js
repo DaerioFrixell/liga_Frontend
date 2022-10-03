@@ -17,6 +17,7 @@ export const feedbacksReducer = (state = initialState, action) => {
         ...state,
         feedbacks: state.feedbacks.concat(action.payload)
       }
+
     default: return state
   }
 }

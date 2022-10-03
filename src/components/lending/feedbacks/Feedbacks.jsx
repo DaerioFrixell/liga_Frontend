@@ -3,46 +3,59 @@ import { Feedback } from "./feedback/Feedback";
 import { connect, useDispatch } from "react-redux";
 import "./feedbacks.scss";
 import { addFeedbackAction } from "../../../redux/action";
+import { useReducer } from "react";
+import { addAuthor, addDescription, clearFeedbackFields, newFeedbackReducer } from "./newFeedbackReducer";
 
-const Feedbacks = ({ feedbacksArr }) => {
+const Feedbacks = ({ feedbacksState }) => {
+  const feedbacksArray = feedbacksState.feedbacks
+
+  const dispatch = useDispatch();
   const [numberFeedbacksArr, setNumberFeedbacksArr] = useState(0)
-  const [feedState, setFeedState] = useState(feedbacksArr[numberFeedbacksArr])
+  const [viewFeedback, setViewFeedback] = useState(feedbacksArray[numberFeedbacksArr])
+  const [newFeedback, newFeedbackDispatch] = useReducer(newFeedbackReducer, {
+    id: 7,
+    author: '',
+    description: ''
+  })
 
   const next = () => {
-    if (numberFeedbacksArr === feedbacksArr.length - 1) {
+    if (numberFeedbacksArr === feedbacksArray.length - 1) {
       setNumberFeedbacksArr(0)
-      setFeedState(feedbacksArr[0])
+      setViewFeedback(feedbacksArray[0])
     } else {
       let index = numberFeedbacksArr;
       index += 1;
       setNumberFeedbacksArr(index)
-      setFeedState(feedbacksArr[index])
+      setViewFeedback(feedbacksArray[index])
     }
   }
 
   const prev = () => {
     if (numberFeedbacksArr === 0) {
-      setNumberFeedbacksArr(feedbacksArr.length - 1)
-      setFeedState(feedbacksArr[feedbacksArr.length - 1])
+      setNumberFeedbacksArr(feedbacksArray.length - 1)
+      setViewFeedback(feedbacksArray[feedbacksArray.length - 1])
     } else {
       let index = numberFeedbacksArr;
       index -= 1;
       setNumberFeedbacksArr(index)
-      setFeedState(feedbacksArr[index])
+      setViewFeedback(feedbacksArray[index])
     }
   }
 
-  const newFeedback = {
-    id: 10,
-    author: 'Daerio Frixell',
-    description: `1. Автор, это просто ааааааааааааааааааааааааааааааааааааа ааааааааааааааааааа аааа-аааааааааа аааааааааааааа аааааааааааааааааааааааааааа ааааааааааааа ааааааааааааа-ааааааааааааааа
-    2. Здравствуйте, автор, ваша книга мне понравилась, особенно вот этот момент: цитата на полглавы
-    3. Ах, какой хороший роман, он мне напомнил, как я прошлым летом...изливает душу на - ти абзацах`
+  const onAuthorChange = e => {
+    const author = e.target.value
+    newFeedbackDispatch(addAuthor(author))
   }
 
-  const dispatch = useDispatch();
+  const onTextAreaChange = e => {
+    const description = e.target.value
+    newFeedbackDispatch(addDescription(description))
+  }
+
+
   const addNewFeedback = () => {
     dispatch(addFeedbackAction(newFeedback))
+    newFeedbackDispatch(clearFeedbackFields('newFeedback'))
   }
 
   return (
@@ -53,19 +66,27 @@ const Feedbacks = ({ feedbacksArr }) => {
         <button
           className="feedbacks__wrapper__arrow a-left"
           onClick={prev}></button>
-        <Feedback feedState={feedState} />
+        <Feedback viewFeedback={viewFeedback} />
         <button
           className="feedbacks__wrapper__arrow a-right"
           onClick={next}></button>
       </div>
 
       <div className="feedbacks__add"  >
-        <input className="feedbacks__add__name" placeholder="как вас зовут?" />
+        <input
+          className="feedbacks__add__name"
+          placeholder="как вас зовут?"
+          value={newFeedback.author}
+          onChange={onAuthorChange} />
         <button
           className="feedbacks__add__btn"
           onClick={addNewFeedback}
         >оставить отзыв</button>
-        <textarea className="feedbacks__add__description" placeholder="напишите что-то"></textarea>
+        <textarea
+          className="feedbacks__add__description"
+          placeholder="напишите что-то"
+          value={newFeedback.description}
+          onChange={onTextAreaChange}></textarea>
       </div>
     </section>
   )
@@ -73,7 +94,7 @@ const Feedbacks = ({ feedbacksArr }) => {
 
 const mapStateToProps = state => {
   return {
-    feedbacksArr: state.feedbacks.feedbacks
+    feedbacksState: state.feedbacks
   }
 }
 
