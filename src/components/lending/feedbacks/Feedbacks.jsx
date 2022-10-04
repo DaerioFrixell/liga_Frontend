@@ -4,14 +4,27 @@ import "./feedbacks.scss";
 import { Feedback } from "./feedback/Feedback";
 import { connect, useDispatch } from "react-redux";
 import {
-  addFeedbackAction,
   addAuthor,
   addDescription,
   clearFeedbackFields,
-} from "../../../redux/feedbacks/feedbacksAction";
+  fbsCompReducer
+} from "./fbsCompReducer";
+import { addFeedbackAction } from "../../../redux/feedbacks/feedbacksAction";
+import { useReducer } from "react";
+// import {
+//   addFeedbackAction,
+//   addAuthor,
+//   addDescription,
+//   clearFeedbackFields,
+// } from "../../../redux/feedbacks/feedbacksAction";
 
 const Feedbacks = ({ feedbacksState }) => {
   const feedbacksArray = feedbacksState.feedbacks
+  const [stateFB, FDdispatch] = useReducer(fbsCompReducer, {
+    id: 7,
+    author: "",
+    description: ""
+  })
 
   const [numberFeedbacksArr, setNumberFeedbacksArr] = useState(0)
   const [viewFeedback, setViewFeedback] = useState(feedbacksArray[numberFeedbacksArr])
@@ -43,17 +56,17 @@ const Feedbacks = ({ feedbacksState }) => {
 
   const onAuthorChange = e => {
     const author = e.target.value
-    dispatch(addAuthor(author))
+    FDdispatch(addAuthor(author))
   }
 
   const onTextAreaChange = e => {
     const description = e.target.value
-    dispatch(addDescription(description))
+    FDdispatch(addDescription(description))
   }
 
   const addNewFeedback = () => {
-    dispatch(addFeedbackAction(feedbacksState.newFeedback))
-    dispatch(clearFeedbackFields())
+    dispatch(addFeedbackAction(stateFB))
+    FDdispatch(clearFeedbackFields())
   }
 
   return (
@@ -74,7 +87,7 @@ const Feedbacks = ({ feedbacksState }) => {
         <input
           className="feedbacks__add__name"
           placeholder="как вас зовут?"
-          value={feedbacksState.newFeedback.author}
+          value={stateFB.author}
           onChange={onAuthorChange} />
         <button
           className="feedbacks__add__btn"
@@ -83,7 +96,7 @@ const Feedbacks = ({ feedbacksState }) => {
         <textarea
           className="feedbacks__add__description"
           placeholder="напишите что-то"
-          value={feedbacksState.newFeedback.description}
+          value={stateFB.description}
           onChange={onTextAreaChange}></textarea>
       </div>
     </section>
