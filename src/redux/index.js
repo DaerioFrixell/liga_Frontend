@@ -1,6 +1,6 @@
 import { createStore, compose } from 'redux';
 import { combineReducers } from 'redux';
-import { feedbacksReducer } from './feedbacksReducer';
+import { feedbacksReducer } from './feedbacks/feedbacksReducer';
 import { lessonsReducer } from './lessonsReducer';
 
 export const rootReducer = combineReducers({

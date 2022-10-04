@@ -1,4 +1,9 @@
-import { ADD_FEEDBACK } from "./types"
+import {
+  ADD_FEEDBACK,
+  ADD_AUTHOR,
+  ADD_DESCRIPTION,
+  CLEAR_FEEDBACKS_FIELD,
+} from "../types"
 
 const initialState = {
   feedbacks: [
@@ -8,9 +13,16 @@ const initialState = {
     { id: 4, author: 'какой-то поц', description: 'хоба епта отзыв' },
     { id: 5, author: 'anonimus', description: 'ну и последний тож' },
   ],
+
+  newFeedback: {
+    id: 7,
+    author: '',
+    description: ''
+  },
 }
 
 export const feedbacksReducer = (state = initialState, action) => {
+
   switch (action.type) {
     case ADD_FEEDBACK:
       return {
@@ -18,6 +30,35 @@ export const feedbacksReducer = (state = initialState, action) => {
         feedbacks: state.feedbacks.concat(action.payload)
       }
 
+    case ADD_AUTHOR:
+      return {
+        ...state,
+        newFeedback: {
+          ...state,
+          author: action.payload
+        }
+      }
+
+    case ADD_DESCRIPTION:
+      return {
+        ...state,
+        newFeedback: {
+          ...state,
+          description: action.payload
+        }
+      }
+
+    case CLEAR_FEEDBACKS_FIELD:
+      return {
+        ...state,
+        newFeedback: {
+          ...state,
+          author: "",
+          description: ""
+        }
+      };
+
     default: return state
   }
 }
+

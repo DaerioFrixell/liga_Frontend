@@ -1,24 +1,23 @@
+
 import React, { useState } from "react";
+import "./feedbacks.scss";
 import { Feedback } from "./feedback/Feedback";
 import { connect, useDispatch } from "react-redux";
-import "./feedbacks.scss";
-import { addFeedbackAction } from "../../../redux/action";
-import { useReducer } from "react";
-import { addAuthor, addDescription, clearFeedbackFields, newFeedbackReducer } from "./newFeedbackReducer";
+import {
+  addFeedbackAction,
+  addAuthor,
+  addDescription,
+  clearFeedbackFields,
+} from "../../../redux/feedbacks/feedbacksAction";
 
 const Feedbacks = ({ feedbacksState }) => {
   const feedbacksArray = feedbacksState.feedbacks
 
-  const dispatch = useDispatch();
   const [numberFeedbacksArr, setNumberFeedbacksArr] = useState(0)
   const [viewFeedback, setViewFeedback] = useState(feedbacksArray[numberFeedbacksArr])
-  const [newFeedback, newFeedbackDispatch] = useReducer(newFeedbackReducer, {
-    id: 7,
-    author: '',
-    description: ''
-  })
+  const dispatch = useDispatch();
 
-  const next = () => {
+  const nextFeedback = () => {
     if (numberFeedbacksArr === feedbacksArray.length - 1) {
       setNumberFeedbacksArr(0)
       setViewFeedback(feedbacksArray[0])
@@ -30,7 +29,7 @@ const Feedbacks = ({ feedbacksState }) => {
     }
   }
 
-  const prev = () => {
+  const prevFeedback = () => {
     if (numberFeedbacksArr === 0) {
       setNumberFeedbacksArr(feedbacksArray.length - 1)
       setViewFeedback(feedbacksArray[feedbacksArray.length - 1])
@@ -44,18 +43,17 @@ const Feedbacks = ({ feedbacksState }) => {
 
   const onAuthorChange = e => {
     const author = e.target.value
-    newFeedbackDispatch(addAuthor(author))
+    dispatch(addAuthor(author))
   }
 
   const onTextAreaChange = e => {
     const description = e.target.value
-    newFeedbackDispatch(addDescription(description))
+    dispatch(addDescription(description))
   }
 
-
   const addNewFeedback = () => {
-    dispatch(addFeedbackAction(newFeedback))
-    newFeedbackDispatch(clearFeedbackFields('newFeedback'))
+    dispatch(addFeedbackAction(feedbacksState.newFeedback))
+    dispatch(clearFeedbackFields())
   }
 
   return (
@@ -65,18 +63,18 @@ const Feedbacks = ({ feedbacksState }) => {
       <div className="feedbacks__wrapper">
         <button
           className="feedbacks__wrapper__arrow a-left"
-          onClick={prev}></button>
+          onClick={prevFeedback}></button>
         <Feedback viewFeedback={viewFeedback} />
         <button
           className="feedbacks__wrapper__arrow a-right"
-          onClick={next}></button>
+          onClick={nextFeedback}></button>
       </div>
 
       <div className="feedbacks__add"  >
         <input
           className="feedbacks__add__name"
           placeholder="как вас зовут?"
-          value={newFeedback.author}
+          value={feedbacksState.newFeedback.author}
           onChange={onAuthorChange} />
         <button
           className="feedbacks__add__btn"
@@ -85,7 +83,7 @@ const Feedbacks = ({ feedbacksState }) => {
         <textarea
           className="feedbacks__add__description"
           placeholder="напишите что-то"
-          value={newFeedback.description}
+          value={feedbacksState.newFeedback.description}
           onChange={onTextAreaChange}></textarea>
       </div>
     </section>

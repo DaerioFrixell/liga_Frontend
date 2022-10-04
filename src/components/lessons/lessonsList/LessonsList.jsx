@@ -1,10 +1,17 @@
-import React from "react";
+
+import { React } from "react";
+import "./lessonsList.scss"
 import { connect, useDispatch } from "react-redux";
 import { Lesson } from "./Lesson/Lesson";
 import { addLessonAction } from "../../../redux/action";
-import "./lessonsList.scss"
 
 const LessonsList = ({ lessonsArr }) => {
+  // const [newLesson, newLessonDispatch] = useReducer(newLessonReducer, {
+  //   id: 10,
+  //   lvl: "Н-1",
+  //   title: "new",
+  // })
+
   const allLessons = lessonsArr.map(less => <Lesson
     key={less.id}
     num={less.id}
@@ -12,13 +19,9 @@ const LessonsList = ({ lessonsArr }) => {
     lessonsArr={lessonsArr}
   />)
 
-  const newLesson = {
-    id: 6,
-    title: "new less title"
-  }
   const dispatch = useDispatch();
   const addNewLesson = () => {
-    dispatch(addLessonAction(newLesson))
+    dispatch(addLessonAction('newLesson'))
   }
 
   return (
