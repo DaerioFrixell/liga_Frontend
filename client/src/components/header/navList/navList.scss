@@ -1,0 +1,22 @@
+.navbar {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  flex-grow: 4;
+
+  &__link {
+    color: rgb(87, 86, 86);
+    transition: color, .3s;
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(135, 198, 142);
+    }
+  }
+
+  &__link--active {
+    color: rgb(106, 160, 112);
+  }
+}

@@ -1,0 +1,52 @@
+.lf {
+  margin: 0rem auto;
+  width: 40vw;
+  height: 400px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+
+    &_label {
+      padding-bottom: 1rem;
+      font-size: 18px;
+    }
+
+    &_input {
+      border: 1px solid #ced4da;
+      border-radius: .25rem;
+      height: 4rem;
+
+      &:focus {
+        color: #212529;
+        background-color: #fff;
+        border-color: #86b7fe;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%)
+      }
+    }
+  }
+}
+
+.lf-btn {
+  width: 33.333%;
+  height: 3rem;
+  background-color: #0d6efd;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #0c5c;
+  }
+}
+
+.lf-agree {
+  padding: 1rem 0;
+  font-size: 13px;
+}

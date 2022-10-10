@@ -1,0 +1,6 @@
+@import '../../../styles/wrapperStyle.scss';
+
+.lessons-list {
+  @include wrapperStyle;
+  height: 500px;
+}

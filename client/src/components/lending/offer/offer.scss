@@ -1,0 +1,14 @@
+.offer {
+  width: 80vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 50vw;
+  row-gap: 20px;
+  color: #f0eeee;
+  font-size: 2rem;
+
+  &__title {
+    font-size: 5rem;
+    padding-top: 20rem;
+  }
+}

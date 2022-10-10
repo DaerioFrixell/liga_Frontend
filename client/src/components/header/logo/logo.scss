@@ -1,0 +1,15 @@
+.logo {
+  display: flex;
+  flex-grow: 1;
+
+  &__link {
+    color: #333;
+    font-size: 5rem;
+    transition: color, 1s;
+
+    &:hover {
+      color: rgb(75, 24, 24);
+      cursor: context-menu;
+    }
+  }
+}
