@@ -1,8 +1,8 @@
 const Router = require("express")
 const router = new Router()
+const feedbackController = require("../controllers/feedbackController")
 
-router.post("/",)
-router.get("/",)
-router.get("/:id",)
+router.post("/", feedbackController.create)
+router.get("/", feedbackController.getAll)
 
 module.exports = router

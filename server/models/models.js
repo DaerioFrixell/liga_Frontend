@@ -13,7 +13,14 @@ const Type = sequelize.define('type', {
   name: { type: DataTypes.STRING, unique: true, allowNull: false },
 })
 
+const Feedback = sequelize.define('feedback', {
+  id: { type: DataTypes.INTEGER, primaryKey: true, unique: true, autoIncrement: true },
+  author: { type: DataTypes.STRING },
+  description: { type: DataTypes.STRING, allowNull: false },
+})
+
 module.exports = {
   User,
   Type,
+  Feedback
 }

@@ -1,59 +1,68 @@
-
-import React, { useState } from "react";
+import { React, useState, useReducer, useEffect } from "react";
 import "./feedbacks.scss";
 import { Feedback } from "./feedback/Feedback";
-import { connect, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   addAuthor,
   addDescription,
   clearFeedbackFields,
   fbsCompReducer
 } from "./fbsCompReducer";
-import { addFeedbackAction } from "../../../redux/feedbacks/feedbacksAction";
-import { useReducer } from "react";
-// import {
-//   addFeedbackAction,
-//   addAuthor,
-//   addDescription,
-//   clearFeedbackFields,
-// } from "../../../redux/feedbacks/feedbacksAction";
+import { addFeedbackAction, getFeedbackAction } from "../../../models/feedbacks/feedbacksAction";
+import { FB } from "./fb";
 
-const Feedbacks = ({ feedbacksState }) => {
-  const feedbacksArray = feedbacksState.feedbacks
+const Feedbacks = () => {
+  const feedbacksArray = useSelector(state => state.feedbacks.feedbacks)
+  console.log("component: ", feedbacksArray)
+
   const [stateFB, FDdispatch] = useReducer(fbsCompReducer, {
     id: 7,
     author: "",
     description: ""
   })
-
-  const [numberFeedbacksArr, setNumberFeedbacksArr] = useState(0)
-  const [viewFeedback, setViewFeedback] = useState(feedbacksArray[numberFeedbacksArr])
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getFeedbackAction())
+  }, [getFeedbackAction]);
 
-  const nextFeedback = () => {
-    if (numberFeedbacksArr === feedbacksArray.length - 1) {
-      setNumberFeedbacksArr(0)
-      setViewFeedback(feedbacksArray[0])
-    } else {
-      let index = numberFeedbacksArr;
-      index += 1;
-      setNumberFeedbacksArr(index)
-      setViewFeedback(feedbacksArray[index])
-    }
-  }
+  // const [val, setVal] = useState('')
+  // useEffect(() => {
+  //   fetchTypes({ name: val }).then(data => {
+  //     const feedbacks = feedbacksArray.concat(data)
+  //     // console.log("fbnew: ", feedbacks)
+  //   })
+  // }, [])
 
-  const prevFeedback = () => {
-    if (numberFeedbacksArr === 0) {
-      setNumberFeedbacksArr(feedbacksArray.length - 1)
-      setViewFeedback(feedbacksArray[feedbacksArray.length - 1])
-    } else {
-      let index = numberFeedbacksArr;
-      index -= 1;
-      setNumberFeedbacksArr(index)
-      setViewFeedback(feedbacksArray[index])
-    }
-  }
 
+  // функционал переключения фидбэков
+  // const [numberFeedbacksArr, setNumberFeedbacksArr] = useState(0)
+  // const [viewFeedback, setViewFeedback] = useState(feedbacksArray[numberFeedbacksArr])
+
+  // const nextFeedback = () => {
+  //   if (numberFeedbacksArr === feedbacksArray.length - 1) {
+  //     setNumberFeedbacksArr(0)
+  //     setViewFeedback(feedbacksArray[0])
+  //   } else {
+  //     let index = numberFeedbacksArr;
+  //     index += 1;
+  //     setNumberFeedbacksArr(index)
+  //     setViewFeedback(feedbacksArray[index])
+  //   }
+  // }
+
+  // const prevFeedback = () => {
+  //   if (numberFeedbacksArr === 0) {
+  //     setNumberFeedbacksArr(feedbacksArray.length - 1)
+  //     setViewFeedback(feedbacksArray[feedbacksArray.length - 1])
+  //   } else {
+  //     let index = numberFeedbacksArr;
+  //     index -= 1;
+  //     setNumberFeedbacksArr(index)
+  //     setViewFeedback(feedbacksArray[index])
+  //   }
+  // }
+
+  //добавление нового фидбэка в редакс
   const onAuthorChange = e => {
     const author = e.target.value
     FDdispatch(addAuthor(author))
@@ -69,11 +78,13 @@ const Feedbacks = ({ feedbacksState }) => {
     FDdispatch(clearFeedbackFields())
   }
 
+
+
   return (
     <section className="feedbacks">
       <h2 className="we">Отзывы</h2>
 
-      <div className="feedbacks__wrapper">
+      {/* <div className="feedbacks__wrapper">
         <button
           className="feedbacks__wrapper__arrow a-left"
           onClick={prevFeedback}></button>
@@ -81,7 +92,7 @@ const Feedbacks = ({ feedbacksState }) => {
         <button
           className="feedbacks__wrapper__arrow a-right"
           onClick={nextFeedback}></button>
-      </div>
+      </div> */}
 
       <div className="feedbacks__add"  >
         <input
@@ -99,14 +110,16 @@ const Feedbacks = ({ feedbacksState }) => {
           value={stateFB.description}
           onChange={onTextAreaChange}></textarea>
       </div>
+      {/* <button onClick={addSmth}>gffgdfgdjfgdfjg</button> */}
+      {/* <input
+        value={val}
+        onChange={e => setVal(e.target.value)} 
+        /> */}
+      <FB />
     </section>
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    feedbacksState: state.feedbacks
-  }
-}
 
-export default connect(mapStateToProps, null)(Feedbacks);
+
+export default Feedbacks;

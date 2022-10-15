@@ -1,28 +1,27 @@
 import {
-  ADD_FEEDBACK,
-  // ADD_AUTHOR,
-  // ADD_DESCRIPTION,
-  // CLEAR_FEEDBACKS_FIELD,
-} from "../types"
+  ASYNC_VIEW_FEEDBACK,
+  FETCH_FEEDBACK,
+  ADD_FEEDBACK
+} from "./feedbacksAction"
 
 const initialState = {
-  feedbacks: [
-    { id: 1, author: 'name', description: 'очень хорошо давай еще' },
-    { id: 2, author: 'name 2', description: 'отправил человека, а он научилась!' },
-    { id: 3, author: 'name 3', description: 'третий отзыв' },
-    { id: 4, author: 'anonimus', description: 'something else' },
-    { id: 5, author: 'anonimus', description: 'the fifth lessons' },
-  ],
-
-  // newFeedback: {
-  //   id: 7,
-  //   author: '',
-  //   description: ''
-  // },
+  // feedbacks: [{ id: 1, author: 'name', description: 'очень хорошо давай еще' }],
 }
 
 export const feedbacksReducer = (state = initialState, action) => {
   switch (action.type) {
+    case FETCH_FEEDBACK:
+      console.log("reduc state: ", state)
+      return {
+        ...state,
+      }
+
+    case ASYNC_VIEW_FEEDBACK:
+      return {
+        ...state,
+        feedbacks: action.payload,
+      }
+
     case ADD_FEEDBACK:
       return {
         ...state,
