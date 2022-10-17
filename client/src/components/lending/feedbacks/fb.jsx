@@ -2,10 +2,10 @@ import { useSelector } from "react-redux"
 
 export const FB = () => {
   const feedbacksArray = useSelector(state => state.feedbacks.feedbacks)
-  console.log(feedbacksArray)
+  // console.log(feedbacksArray)
 
   const check = feedbacksArray
-    ? feedbacksArray.map(f => <div>{f.author} {f.description}</div>)
+    ? feedbacksArray.map((f) => <div>{f.id} {f.author} {f.description}</div>)
     : ('loading...')
 
   return (

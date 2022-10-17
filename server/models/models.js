@@ -15,7 +15,7 @@ const Type = sequelize.define('type', {
 
 const Feedback = sequelize.define('feedback', {
   id: { type: DataTypes.INTEGER, primaryKey: true, unique: true, autoIncrement: true },
-  author: { type: DataTypes.STRING },
+  author: { type: DataTypes.STRING, allowNull: false },
   description: { type: DataTypes.STRING, allowNull: false },
 })
 

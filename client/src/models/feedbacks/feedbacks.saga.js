@@ -5,19 +5,15 @@ import {
   fetchFeedbackAction,
 } from './feedbacksAction';
 import { getFeedbacksApi } from './feedback.services';
-// import {
-//   setErrorPlanetsAction,
-// } from './planet.action';
 
 function* getFeedbacksWorker() {
-  // catch (error) {
-  //   yield put(setErrorPlanetsAction(error));
-  // }
   try {
-    yield put(fetchFeedbackAction())
-    const { data } = yield call(getFeedbacksApi)
-    yield put(asyncViewFeedbackAction(data))
-  } catch (e) { }
+    // yield put(fetchFeedbackAction())
+    const { data } = yield call(getFeedbacksApi) // обращение к БД
+    yield put(asyncViewFeedbackAction(data)) // положить данные в Reducer
+  } catch (e) {
+    console.log(e)
+  }
 }
 
 export default function* getFeedbackWatcher() {

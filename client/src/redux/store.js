@@ -14,7 +14,6 @@ const rootReducer = combineReducers({
 })
 
 const sagaMiddleware = createSagaMiddleware();
-
 const store = createStore(
   rootReducer,
   composeEnhancers(applyMiddleware(sagaMiddleware))

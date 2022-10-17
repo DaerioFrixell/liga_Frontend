@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import './feedback.scss';
 
-export const Feedback = ({ viewFeedback }) => {
+export const Feedback = memo(({ viewFeedback }) => {
   console.log("map comnp: ", viewFeedback)
   return (
     <div className='feedback'>
@@ -9,4 +9,4 @@ export const Feedback = ({ viewFeedback }) => {
       <p className='feedback__description'>{viewFeedback.description}</p>
     </div>
   )
-}
+})

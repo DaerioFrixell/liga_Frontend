@@ -5,17 +5,15 @@ import {
 } from "./feedbacksAction"
 
 const initialState = {
-  // feedbacks: [{ id: 1, author: 'name', description: 'очень хорошо давай еще' }],
+  feedbacks: [{ id: 1, author: 'заглушка', description: 'заглушка' }],
 }
 
 export const feedbacksReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_FEEDBACK:
-      console.log("reduc state: ", state)
-      return {
-        ...state,
-      }
-
+    // case FETCH_FEEDBACK:
+    //   return {
+    //     ...state,
+    //   }
     case ASYNC_VIEW_FEEDBACK:
       return {
         ...state,

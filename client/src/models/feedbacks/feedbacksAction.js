@@ -21,8 +21,6 @@ export const asyncViewFeedbackAction = feedback => {
   }
 }
 
-
-
 export const getFeedbackAction = () => ({
   type: GET_FEEDBACK
 })
