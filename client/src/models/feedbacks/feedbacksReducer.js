@@ -1,6 +1,6 @@
 import {
   ASYNC_VIEW_FEEDBACK,
-  FETCH_FEEDBACK,
+  // FETCH_FEEDBACK,
   ADD_FEEDBACK
 } from "./feedbacksAction"
 
@@ -25,34 +25,6 @@ export const feedbacksReducer = (state = initialState, action) => {
         ...state,
         feedbacks: state.feedbacks.concat(action.payload)
       }
-
-    // case ADD_AUTHOR:
-    //   return {
-    //     ...state,
-    //     newFeedback: {
-    //       ...state,
-    //       author: action.payload
-    //     }
-    //   }
-
-    // case ADD_DESCRIPTION:
-    //   return {
-    //     ...state,
-    //     newFeedback: {
-    //       ...state,
-    //       description: action.payload
-    //     }
-    //   }
-
-    // case CLEAR_FEEDBACKS_FIELD:
-    //   return {
-    //     ...state,
-    //     newFeedback: {
-    //       ...state,
-    //       author: "",
-    //       description: ""
-    //     }
-    //   };
 
     default: return state
   }

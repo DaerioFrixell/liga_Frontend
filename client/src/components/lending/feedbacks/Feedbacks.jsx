@@ -3,14 +3,14 @@ import "./feedbacks.scss";
 import { Feedback } from "./feedback/Feedback";
 import { useDispatch, useSelector } from "react-redux";
 import { getFeedbackAction } from "../../../models/feedbacks/feedbacksAction";
-import { FB } from "./fb";
-import { createType } from "../../../api/deviceApi";
+import { createFeedback } from "../../../api/feedbackApi";
+// import { FB } from "./fb";
 
 const Feedbacks = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getFeedbackAction())
-  }, [])
+  }, [dispatch])
 
   const feedbacksArray = useSelector(state => state.feedbacks.feedbacks)
 
@@ -18,7 +18,7 @@ const Feedbacks = () => {
   const [description, setDescription] = useState('')
   const [author, setAuthor] = useState('')
   const addNewFeedback = () => {
-    createType({ author: author, description: description }).then(data => {
+    createFeedback({ author: author, description: description }).then(data => {
       setAuthor('')
       setDescription('')
     })
@@ -52,7 +52,6 @@ const Feedbacks = () => {
     }
   }
 
-  //
   const loader = feedbacksArray
     ? (<div className="feedbacks__wrapper">
       <button

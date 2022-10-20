@@ -8,9 +8,11 @@ const User = sequelize.define('user', {
   role: { type: DataTypes.STRING, defaultValue: "USER" },
 })
 
-const Type = sequelize.define('type', {
-  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-  name: { type: DataTypes.STRING, unique: true, allowNull: false },
+const Lead = sequelize.define('lead', {
+  id: { type: DataTypes.INTEGER, primaryKey: true, unique: true, autoIncrement: true },
+  name: { type: DataTypes.STRING, allowNull: false },
+  number: { type: DataTypes.STRING, allowNull: false },
+  comment: { type: DataTypes.STRING },
 })
 
 const Feedback = sequelize.define('feedback', {
@@ -21,6 +23,6 @@ const Feedback = sequelize.define('feedback', {
 
 module.exports = {
   User,
-  Type,
-  Feedback
+  Lead,
+  Feedback,
 }
