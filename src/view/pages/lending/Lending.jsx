@@ -1,6 +1,6 @@
 import React from 'react';
 import './lending.scss'
-import { Header } from '../header/Header';
+import { Header } from '../../../view/components/header/Header';
 import { Offer } from './offer/Offer';
 import { LendingForm } from './form/LendingForm';
 import Feedbacks from './feedbacks/Feedbacks';

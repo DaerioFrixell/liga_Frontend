@@ -2,9 +2,8 @@ import { React, useState, useEffect } from "react";
 import "./feedbacks.scss";
 import { Feedback } from "./feedback/Feedback";
 import { useDispatch, useSelector } from "react-redux";
-import { getFeedbackAction } from "../../../models/feedbacks/feedbacksAction";
-import { createFeedback } from "../../../api/feedbackApi";
-// import { FB } from "./fb";
+import { getFeedbackAction } from "../../../../models/feedbacks/feedbacksAction";
+import { createFeedback } from "../../../../api/feedbackApi";
 
 const Feedbacks = () => {
   const dispatch = useDispatch();
@@ -86,7 +85,6 @@ const Feedbacks = () => {
           onChange={e => setDescription(e.target.value)}
         ></textarea>
       </div>
-      {/* <FB /> */}
     </section>
   )
 }

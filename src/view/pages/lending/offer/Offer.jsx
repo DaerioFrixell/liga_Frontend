@@ -1,5 +1,5 @@
 import React from "react";
-import { LendingButton } from "../../UI/button/LendingButton";
+import { LendingButton } from "../../../components/UI/button/LendingButton";
 import './offer.scss';
 
 export const Offer = () => {

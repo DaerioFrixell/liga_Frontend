@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deleteLessonAction } from "../../../../redux/action";
+import { deleteLessonAction } from "../../../../../redux/action";
 import "./lesson.scss"
 
 export const Lesson = ({

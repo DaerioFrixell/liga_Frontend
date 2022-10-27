@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createLead } from "../../../api/leadApi";
+import { createLead } from "../../../../api/leadApi";
 import './lendingForm.scss';
 
 export const LendingForm = () => {
