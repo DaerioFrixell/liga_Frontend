@@ -1,16 +1,19 @@
+$middle: 1280px;
+
 .bg {
   // position: relative;
-  height: 80rem;
+  height: 100rem;
   background: url(./BGphoto.JPG), rgba(21, 21, 21, 0.623);
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: overlay;
   z-index: -1;
   opacity: .9;
-}
 
-.lending {
-  margin: 0rem auto;
-  width: 90vw;
+  @media (max-width: 1920px) {
+    .bg {
 
+      height: 20rem
+    }
+  }
 }

@@ -1,14 +1,96 @@
-.offer {
-  width: 80vw;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 50vw;
-  row-gap: 20px;
-  color: #f0eeee;
-  font-size: 2rem;
+@import '../../../styles/generalStyles';
 
-  &__title {
-    font-size: 5rem;
-    padding-top: 20rem;
+.offer {
+  width: 90%;
+  height: 50%;
+  margin: auto;
+
+  color: #f0eeee;
+
+  &__text {
+    padding: 0;
+    margin: 0;
+  }
+
+  &__button {
+    font-weight: bold;
+    width: 33.333%;
+  }
+}
+
+@media (min-width: $biggestWidth) {
+  .offer {
+    border: 1rem solid gray;
+    max-width: $biggestWidth;
+
+    &__title {
+      font-size: 3rem;
+    }
+
+    &__text {
+      font-size: 2.2rem;
+    }
+
+    &__button {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+@media (max-width: $mineWidth) {
+  .offer {
+    border: 1rem solid green;
+    max-width: $mineWidth;
+
+    &__title {
+      font-size: 3rem;
+    }
+
+    &__text {
+      font-size: 2.2rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    &__button {
+      font-size: 1.4rem;
+      font-weight: bold;
+      width: 33.333%;
+    }
+  }
+}
+
+@media (max-width: $notebookWidth) {
+  .offer {
+    border: 1rem solid pink;
+    max-width: $notebookWidth;
+  }
+}
+
+@media (max-width: $planshetWidth) {
+  .offer {
+    border: 1rem solid tan;
+    max-width: $planshetWidth;
+  }
+}
+
+@media (max-width: $bigMobWidth) {
+  .offer {
+    border: 1rem solid darkorchid;
+    max-width: $bigMobWidth;
+  }
+}
+
+@media (max-width: $midMobWidth) {
+  .offer {
+    border: 1rem solid teal;
+    max-width: $midMobWidth;
+  }
+}
+
+@media (max-width: $smallMobWidth) {
+  .offer {
+    max-width: $smallMobWidth;
+    border: 1rem solid orange;
   }
 }
