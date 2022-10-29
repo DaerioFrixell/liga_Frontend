@@ -1,4 +1,7 @@
 @import '../../../styles/wrapperStyle.scss';
+@import '../../../styles/generalStyles';
+@import '../../../styles/screenSize.scss';
+@import '../../../styles/colors.scss';
 
 .time {
   @include wrapperStyle;
@@ -35,5 +38,13 @@
         background-color: rgba(65, 164, 65, 0.719);
       }
     }
+  }
+}
+
+@media (max-width: $midMobWidth) {
+  .time__list {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
   }
 }

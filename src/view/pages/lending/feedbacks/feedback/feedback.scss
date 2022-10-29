@@ -1,3 +1,7 @@
+@import '../../../../styles/generalStyles';
+@import '../../../../styles/screenSize.scss';
+@import '../../../../styles/colors.scss';
+
 .feedback {
   display: grid;
   grid-template-columns: 1fr 4fr;
@@ -6,5 +10,23 @@
 
   &__author {
     font-weight: bold;
+  }
+}
+
+@media (max-width: $midMobWidth) {
+  .feedback {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    &__author {
+      padding-bottom: 3rem;
+      font-size: $mobH3Small;
+    }
+
+    &__description {
+      font-size: $mobTextLittle;
+      font-weight: normal;
+    }
   }
 }

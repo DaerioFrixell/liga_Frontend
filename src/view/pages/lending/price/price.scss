@@ -1,4 +1,7 @@
 @import '../../../styles/wrapperStyle.scss';
+@import '../../../styles/generalStyles';
+@import '../../../styles/screenSize.scss';
+@import '../../../styles/colors.scss';
 
 .price {
   @include wrapperStyle;
@@ -23,6 +26,22 @@
       grid-row: 2/3;
     }
   }
+}
 
+@media (max-width: $midMobWidth) {
+  .price {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 80vw;
 
+    &__less {
+      display: flex;
+      flex-direction: column;
+      height: 20rem;
+      margin-bottom: 1rem;
+
+      background-color: rgba(128, 128, 128, 0.454);
+    }
+  }
 }

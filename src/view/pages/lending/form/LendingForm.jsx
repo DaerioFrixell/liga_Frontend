@@ -39,7 +39,7 @@ export const LendingForm = () => {
         </div>
 
         <div className="lf__item">
-          <label className="lf__item_label">оставьте свой комментарий для меня</label>
+          <label className="lf__item_label">оставьте комментарий</label>
           <input
             className="lf__item_input"
             value={comment}

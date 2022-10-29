@@ -7,6 +7,11 @@
 // $mid;
 // $small;
 // $smaller;
+
+h2 {
+  padding-top: 3rem;
+}
+
 $h3big: 3.2rem;
 $h3mid: 2.7rem;
 $h3Small: 2.2rem;
@@ -31,8 +36,12 @@ $mobLogoSmall: 3rem;
 
 $mobH1Big: 5rem;
 $mobH1: 3.5rem;
+$mobH1Little: 2.8rem;
 $mobH1Small: 2rem;
+
+$mobH3Small: 2rem;
 
 $mobBigText: 3rem;
 $mobText: 2rem;
+$mobTextLittle: 1.6rem;
 $mobSmallText: 1.2rem;

@@ -1,7 +1,11 @@
+@import '../../../styles/generalStyles';
+@import '../../../styles/screenSize.scss';
+@import '../../../styles/colors.scss';
+
 .lf {
   margin: 0rem auto;
-  width: 40vw;
-  height: 400px;
+  width: 50vw;
+  height: 60rem;
 
   &__item {
     display: flex;
@@ -30,7 +34,8 @@
 }
 
 .lf-btn {
-  width: 33.333%;
+  width: auto;
+  margin: auto;
   height: 3rem;
   background-color: #0d6efd;
   border: 1px solid transparent;
@@ -40,13 +45,66 @@
   text-decoration: none;
   font-size: 14px;
 
+
   &:hover {
     cursor: pointer;
     background-color: #0c5c;
   }
 }
 
-.lf-agree {
-  padding: 1rem 0;
-  font-size: 13px;
+@media (max-width: $bigMobWidth) {
+  .lf {
+    width: 60vw;
+    height: 50vh;
+
+    &__item {
+      &_label {
+        font-size: $mobTextLittle;
+      }
+    }
+  }
+
+  .lf-btn {
+    width: 60vw;
+  }
+
+  .checkMe {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: $midMobWidth) {
+  .lf {
+    width: 70vw;
+    height: 50vh;
+
+    &__item {
+      &_label {
+        font-size: $mobTextLittle;
+      }
+    }
+  }
+
+  .lf-btn {
+    width: 70vw;
+  }
+
+  .checkMe {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: $smallMobWidth) {
+  .lf {
+    width: 90vw;
+    height: 50vh;
+  }
+
+  .checkMe {
+    font-size: 1.6rem;
+  }
+
+  .lf-btn {
+    width: 90vw;
+  }
 }

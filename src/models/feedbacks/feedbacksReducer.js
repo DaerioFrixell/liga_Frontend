@@ -5,7 +5,11 @@ import {
 } from "./feedbacksAction"
 
 const initialState = {
-  feedbacks: [{ id: 1, author: 'заглушка', description: 'заглушка' }],
+  feedbacks: [
+
+    { id: 1, author: 'заглушка', description: 'заглушка' },
+    { id: 2, author: 'лев толстой', description: 'я пишу большую книгу и тебе придётся её читать' }
+  ],
 }
 
 export const feedbacksReducer = (state = initialState, action) => {

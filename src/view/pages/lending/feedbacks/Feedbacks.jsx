@@ -74,16 +74,17 @@ const Feedbacks = () => {
           value={author}
           onChange={e => setAuthor(e.target.value)}
         />
-        <button
-          className="feedbacks__add__btn"
-          onClick={addNewFeedback}
-        >оставить отзыв</button>
         <textarea
           className="feedbacks__add__description"
           placeholder="напишите что-то"
           value={description}
           onChange={e => setDescription(e.target.value)}
         ></textarea>
+        <button
+          className="feedbacks__add__btn"
+          onClick={addNewFeedback}
+        >оставить отзыв</button>
+
       </div>
     </section>
   )

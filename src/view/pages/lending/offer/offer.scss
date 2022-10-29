@@ -123,11 +123,7 @@
 }
 
 @media (max-width: $smallMobWidth) {
-
-
   .offer {
-    max-width: $smallMobWidth;
-
     &__title {
       font-size: $mobH1Small;
     }
