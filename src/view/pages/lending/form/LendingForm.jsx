@@ -53,9 +53,7 @@ export const LendingForm = () => {
           onClick={addNewLead}
         >записаться</button>
 
-        <div className="lf-agree">
-          Соглашаясь, Вы даете согласие на обработку персональных данных
-        </div>
+
       </form>
     </section>
   );

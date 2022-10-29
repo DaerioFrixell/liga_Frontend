@@ -1,0 +1,44 @@
+@import '../../../styles/generalStyles';
+@import '../../../styles/screenSize.scss';
+@import '../../../styles/colors.scss';
+
+.nav-info {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+
+  &__icon {
+    background-image: url(./inst.png);
+    background-size: cover;
+    width: 5rem;
+    height: 5rem;
+    margin-left: 2.5rem;
+
+    &:hover {
+      background-color: $hoverOk;
+    }
+  }
+
+  &__phone:hover {
+    cursor: context-menu;
+  }
+}
+
+@media (max-width: $midMobWidth) {
+  .nav-info {
+    &__icon {
+      &:last-child {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: $smallMobWidth) {
+  .nav-info {
+    &__icon {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+  }
+}

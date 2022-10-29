@@ -1,4 +1,6 @@
-$middle: 1280px;
+@import '../../styles/generalStyles';
+@import '../../styles/screenSize.scss';
+@import '../../styles/colors.scss';
 
 .bg {
   // position: relative;
@@ -10,10 +12,13 @@ $middle: 1280px;
   z-index: -1;
   opacity: .9;
 
-  @media (max-width: 1920px) {
-    .bg {
 
-      height: 20rem
-    }
+}
+
+@media (max-width: $bigMobWidth) {
+  .bg {
+    height: 93vh;
+    background-image: none;
+    background: linear-gradient(rgb(117, 117, 245), rgb(240, 211, 149))
   }
 }

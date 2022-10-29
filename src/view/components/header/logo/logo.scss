@@ -1,15 +1,62 @@
-.logo {
-  display: flex;
-  flex-grow: 1;
+@import '../../../styles/generalStyles';
+@import '../../../styles/screenSize.scss';
+@import '../../../styles/colors.scss';
 
+.logo {
   &__link {
     color: #333;
     font-size: 5rem;
     transition: color, 1s;
+    font-weight: bold;
 
     &:hover {
-      color: rgb(75, 24, 24);
+      color: rgb(95, 27, 27);
       cursor: context-menu;
+    }
+  }
+}
+
+@media (min-width: $biggestWidth) {
+  .logo {
+    &__link {
+      font-size: $logoBig;
+      color: $colorBiggestScr;
+    }
+  }
+}
+
+@media (max-width: $mineWidth) {
+  .logo {
+    &__link {
+      font-size: $logo;
+      color: $colorMineScr;
+    }
+  }
+}
+
+@media (max-width: $notebookWidth) {
+  .logo {
+    &__link {
+      font-size: $logoSmall;
+      color: $colorNB;
+    }
+  }
+}
+
+@media (max-width: $midMobWidth) {
+  .logo {
+    &__link {
+      font-size: $mobLogo;
+      color: $colorMidMob;
+    }
+  }
+}
+
+@media (max-width: $smallMobWidth) {
+  .logo {
+    &__link {
+      font-size: $mobLogoSmall;
+      color: $colorSmallMob;
     }
   }
 }

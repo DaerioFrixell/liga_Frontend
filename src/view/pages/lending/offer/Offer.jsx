@@ -5,13 +5,12 @@ import './offer.scss';
 export const Offer = () => {
   return (
     <div className='offer'>
-      <h1 className='offer__title'>Уроки гитары на гитаре</h1>
-      <div>
-        <p className='offer__text'>я учу играть на гитаре, а не разбирать пару песен,без знаний,</p>
-        <p className='offer__text'>как выучить другие самостоятельно</p>
-        <p className='offer__text'>скидка на первый абонемент 30% </p>
-        <p className='offer__text'>+ бесплатный доступ в телеграм-канал! </p>
-      </div>
+      <h1 className='offer__title'>Уроки игры на гитаре</h1>
+      <p className='offer__text'>скидка на первый абонемент 30% </p>
+      <p className='offer__text' >+ бесплатный доступ в телеграм-канал! </p>
+      <p className='offer__text hidden500'>обучаю развиваться самостоятельно</p>
+      <p className='offer__text'>оставьте заявку и я вам перезвоню</p>
+      <p className='offer__text'>или позвоните по номеру +7-986-951-04-69</p>
       <Button
         classname={'offer__button'}
         nameBtn={'записаться на пробный урок'} />

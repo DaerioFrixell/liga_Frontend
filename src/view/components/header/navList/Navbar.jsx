@@ -1,9 +1,14 @@
 import React from "react";
-import './navList.scss';
+import './navbar.scss';
 import { Link } from "react-scroll";
 import { linkDuration, linkOffset } from '../../setting/smoothLink'
 
-export function NavList() {
+
+export function Navbar() {
+
+  // if (document.documentElement.offsetWidth < 950) return null
+
+
 
   return (
     <nav className='navbar'>

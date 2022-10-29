@@ -1,0 +1,55 @@
+@import '../../../styles/generalStyles';
+@import '../../../styles/screenSize.scss';
+
+.navbar {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  justify-content: space-around;
+  flex-grow: 4;
+
+  &__link {
+    color: rgb(70, 69, 69);
+    transition: color, .3s;
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(135, 198, 142);
+    }
+  }
+
+  &__link--active {
+    color: rgb(106, 160, 112);
+  }
+}
+
+@media (min-width: $biggestWidth) {
+  .navbar {
+    &__link {
+      font-size: $h3big;
+    }
+  }
+}
+
+@media (max-width: $mineWidth) {
+  .navbar {
+    &__link {
+      font-size: $h3mid;
+    }
+  }
+}
+
+@media (max-width: $notebookWidth) {
+  .navbar {
+    &__link {
+      font-size: $h3Small;
+    }
+  }
+}
+
+@media (max-width: $bigMobWidth) {
+  .navbar {
+    display: none;
+  }
+}

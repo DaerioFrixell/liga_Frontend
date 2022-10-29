@@ -1,96 +1,144 @@
 @import '../../../styles/generalStyles';
+@import '../../../styles/screenSize.scss';
+@import '../../../styles/colors.scss';
+
+
 
 .offer {
+  display: flex;
+  flex-direction: column;
   width: 90%;
-  height: 50%;
-  margin: auto;
-
+  height: 93vh;
+  margin: 0 auto;
+  padding: 15% 0;
   color: #f0eeee;
+
+  &__title {
+    padding-bottom: 5rem;
+  }
 
   &__text {
     padding: 0;
+    padding-bottom: 1rem;
     margin: 0;
   }
 
   &__button {
-    font-weight: bold;
     width: 33.333%;
+    height: 3.5rem;
+    font-weight: bold;
+  }
+
+  .hidden500 {
+    padding: 5rem 0;
   }
 }
 
-@media (min-width: $biggestWidth) {
-  .offer {
-    border: 1rem solid gray;
-    max-width: $biggestWidth;
-
-    &__title {
-      font-size: 3rem;
-    }
-
-    &__text {
-      font-size: 2.2rem;
-    }
-
-    &__button {
-      font-size: 1.4rem;
-    }
-  }
-}
 
 @media (max-width: $mineWidth) {
   .offer {
-    border: 1rem solid green;
-    max-width: $mineWidth;
-
     &__title {
       font-size: 3rem;
     }
 
     &__text {
       font-size: 2.2rem;
-      padding: 0;
-      margin: 0;
     }
 
     &__button {
       font-size: 1.4rem;
-      font-weight: bold;
       width: 33.333%;
     }
   }
 }
 
-@media (max-width: $notebookWidth) {
-  .offer {
-    border: 1rem solid pink;
-    max-width: $notebookWidth;
-  }
-}
-
-@media (max-width: $planshetWidth) {
-  .offer {
-    border: 1rem solid tan;
-    max-width: $planshetWidth;
-  }
-}
-
 @media (max-width: $bigMobWidth) {
   .offer {
-    border: 1rem solid darkorchid;
     max-width: $bigMobWidth;
+
+    &__title {
+      text-align: center;
+      font-size: $mobH1Big;
+    }
+
+    &__text {
+      text-align: center;
+      font-size: $mobBigText;
+    }
+
+    &__button {
+      margin: auto;
+      width: auto;
+      height: 6rem;
+      font-size: $mobBigText;
+
+    }
   }
 }
 
 @media (max-width: $midMobWidth) {
   .offer {
-    border: 1rem solid teal;
     max-width: $midMobWidth;
+    padding: 40% 0;
+
+    &__title {
+      font-size: $mobH1;
+    }
+
+    &__text {
+      font-size: $mobText;
+    }
+
+    &__button {
+      font-size: $mobText;
+      width: 40rem;
+      height: 3.5rem;
+    }
+  }
+}
+
+@media (max-width: $betwMobWidth) {
+  .hidden500 {
+    display: none;
+  }
+
+  .offer {
+    max-width: $betwMobWidth;
+    padding: 50% 0;
+
+    &__title {
+      font-size: 3rem;
+    }
+
+    &__text {
+      font-size: 1.6rem;
+    }
+
+    &__button {
+      font-size: 1.6rem;
+      width: 30rem;
+      height: 3rem;
+    }
   }
 }
 
 @media (max-width: $smallMobWidth) {
+
+
   .offer {
     max-width: $smallMobWidth;
-    border: 1rem solid orange;
+
+    &__title {
+      font-size: $mobH1Small;
+    }
+
+    &__text {
+      font-size: $mobSmallText;
+    }
+
+    &__button {
+      font-size: $mobSmallText;
+      width: 20rem;
+    }
   }
 }

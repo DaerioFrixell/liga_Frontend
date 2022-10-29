@@ -1,20 +1,38 @@
-//screen size
-$biggestWidth: 1921px;
-$mineWidth: 1920px; //mine width
-$notebookWidth: 1439px;
-$planshetWidth: 1279px;
-$bigMobWidth: 1080px;
-$midMobWidth: 720px;
-$smallMobWidth: 500px;
-
-//fonts
 // $h1: 5rem;
 // $h2: 4rem;
 // $h3: 3rem;
 
-$bigText: 2.5rem;
-$midText: 2rem;
-$smlText: 1.5rem;
+// $biggest;
+// $big;
+// $mid;
+// $small;
+// $smaller;
+$h3big: 3.2rem;
+$h3mid: 2.7rem;
+$h3Small: 2.2rem;
+
+$h1big: 5rem;
+$h1mid: 4rem;
+
+
+$bigText: 3rem;
+$text: 2.5rem;
+$smlText: 2rem;
+
+$logoBig: 6.5rem;
+$logo: 5rem;
+$logoSmall: 4.5rem;
+
 
 //mobile size
-$mobIcon: 50px;
+$mobLogoBig: 4.6rem;
+$mobLogo: 3.8rem;
+$mobLogoSmall: 3rem;
+
+$mobH1Big: 5rem;
+$mobH1: 3.5rem;
+$mobH1Small: 2rem;
+
+$mobBigText: 3rem;
+$mobText: 2rem;
+$mobSmallText: 1.2rem;

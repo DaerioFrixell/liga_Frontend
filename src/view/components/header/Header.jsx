@@ -1,15 +1,15 @@
 import React from 'react';
 import './header.scss';
 import Logo from './logo/Logo';
-import { NavList } from './navList/NavList';
-import NavInfo from './navInfo/NavInfo';
+import { Navbar } from './navList/Navbar';
+import { NavIcon } from './navIcon/NavIcon';
 
 export const Header = () => {
   return (
     <header className="sticky">
       <Logo />
-      <NavList />
-      <NavInfo />
+      <Navbar />
+      <NavIcon />
     </header>
   );
 }
