@@ -1,21 +1,16 @@
 import React from "react";
-import './navbar.scss';
+import "./navbar.scss";
 import { Link } from "react-scroll";
-import { linkDuration, linkOffset } from '../../setting/smoothLink'
-
+import { linkDuration, linkOffset } from "../../../styles/setting/smoothLink"
 
 export function Navbar() {
-
   // if (document.documentElement.offsetWidth < 950) return null
-
-
-
   return (
-    <nav className='navbar'>
+    <nav className="navbar">
       <Link
         className="navbar__link"
         activeClass="navbar__link--active"
-        to='feedbacks'
+        to="feedbacks"
         smooth={true}
         spy={true}
         duration={linkDuration}
@@ -25,27 +20,27 @@ export function Navbar() {
       <Link
         className="navbar__link"
         activeClass="navbar__link--active"
-        to='priceBlock'
+        to="priceBlock"
         smooth={true}
         spy={true}
         duration={linkDuration}
         offset={linkOffset}
-      >цены</Link>
+      >абонементы</Link>
 
       <Link
         className="navbar__link"
         activeClass="navbar__link--active"
-        to='availableTimeBlock'
+        to="availableTimeBlock"
         smooth={true}
         spy={true}
         duration={linkDuration}
         offset={linkOffset}
-      >свободное время</Link>
+      >доступное время</Link>
 
       <Link
         className="navbar__link"
         activeClass="navbar__link--active"
-        to='lendingForm'
+        to="lendingForm"
         smooth={true}
         spy={true}
         duration={linkDuration}

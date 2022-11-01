@@ -1,2 +1,2 @@
 export const linkDuration = 700;
-export const linkOffset = -90;
+export const linkOffset = -40;

@@ -7,18 +7,16 @@
 // $mid;
 // $small;
 // $smaller;
+$h1big: 5rem;
+$h1mid: 4rem;
 
 h2 {
-  padding-top: 3rem;
+  padding-top: 4rem;
 }
 
 $h3big: 3.2rem;
 $h3mid: 2.7rem;
 $h3Small: 2.2rem;
-
-$h1big: 5rem;
-$h1mid: 4rem;
-
 
 $bigText: 3rem;
 $text: 2.5rem;
@@ -45,3 +43,22 @@ $mobBigText: 3rem;
 $mobText: 2rem;
 $mobTextLittle: 1.6rem;
 $mobSmallText: 1.2rem;
+
+
+@mixin subscriptionGuitLess {
+  font-weight: bold;
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(#d0ad21, #bfb079);
+}
+
+$borderRadius: 5px;
+
+$btnBackgound: rgba(249, 232, 210, 0.977);
+$btnHover: rgb(248, 214, 170);
+$btnActive: rgb(228, 246, 154);
+
+$btnOk: #0c5c; // no use now
+$btnBg2: #0d6efd; // no use now
+
+$borderColor: rgba(0, 0, 0, 0.386);

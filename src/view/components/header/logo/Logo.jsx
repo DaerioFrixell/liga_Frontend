@@ -1,15 +1,14 @@
 import React from "react";
-import './logo.scss';
+import "./logo.scss";
 import { Link } from "react-scroll";
-import { linkDuration } from '../../setting/smoothLink'
+import { linkDuration } from "../../../styles/setting/smoothLink"
 
 function Logo() {
-
   return (
-    <div id='home' className="logo">
+    <div id="home" className="logo">
       <Link
         className="logo__link"
-        to='home'
+        to="home"
         smooth={true}
         spy={true}
         duration={linkDuration}

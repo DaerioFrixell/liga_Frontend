@@ -4,12 +4,13 @@
 
 .feedback {
   display: grid;
-  grid-template-columns: 1fr 4fr;
-  gap: 15rem;
+  grid-template-columns: 15vw 65vw;
+  gap: 1rem;
   align-items: center;
 
   &__author {
     font-weight: bold;
+    text-align: center;
   }
 }
 
@@ -20,7 +21,7 @@
     gap: 0;
 
     &__author {
-      padding-bottom: 3rem;
+      padding-bottom: 1rem;
       font-size: $mobH3Small;
     }
 

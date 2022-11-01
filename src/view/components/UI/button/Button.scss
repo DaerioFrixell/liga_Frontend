@@ -1,15 +1,17 @@
+@import '../../../styles/generalStyles.scss';
+
 .lending-button {
-  background-color: rgba(249, 232, 210, 0.977);
   border: none;
-  border-radius: 10px;
+  background-color: $btnBackgound;
+  border-radius: $borderRadius;
   margin: .5rem 0;
   padding: .5rem 1rem;
 
   &:hover {
-    background-color: rgb(248, 214, 170);
+    background-color: $btnHover;
   }
 
   &:active {
-    background-color: rgb(228, 246, 154);
+    background-color: $btnActive;
   }
 }

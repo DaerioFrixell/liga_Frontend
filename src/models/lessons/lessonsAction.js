@@ -1,4 +1,5 @@
-import { ADD_LESSON, DELETE_LESSON } from "./types"
+export const ADD_LESSON = "lessons/ADD_LESSON";
+export const DELETE_LESSON = "lessons/DELETE_LESSON";
 
 export const addLessonAction = (lesson) => {
   return {

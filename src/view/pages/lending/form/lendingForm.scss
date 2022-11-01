@@ -4,8 +4,8 @@
 
 .lf {
   margin: 0rem auto;
+  margin-bottom: 5rem;
   width: 50vw;
-  height: 60rem;
 
   &__item {
     display: flex;
@@ -37,18 +37,22 @@
   width: auto;
   margin: auto;
   height: 3rem;
-  background-color: #0d6efd;
+  background-color: $btnBackgound;
   border: 1px solid transparent;
   border-radius: .25rem;
-  color: white;
+  color: #272727ee;
   text-align: center;
   text-decoration: none;
   font-size: 14px;
-
+  font-weight: bold;
 
   &:hover {
     cursor: pointer;
-    background-color: #0c5c;
+    background-color: $btnHover;
+  }
+
+  &:active {
+    background-color: $btnActive;
   }
 }
 

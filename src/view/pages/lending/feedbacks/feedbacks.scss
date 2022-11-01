@@ -44,18 +44,19 @@
       display: grid;
       grid-column: 1/2;
       align-items: center;
-      border-radius: 15px;
+      border-radius: $borderRadius;
+      border: 1px solid $borderColor;
       text-align: center;
       width: 39vw;
       margin-bottom: 1rem;
       padding: 1rem;
-
     }
 
     &__description {
       display: grid;
       grid-column: 1/3;
-      border-radius: 15px;
+      border-radius: $borderRadius;
+      border: 1px solid $borderColor;
       resize: none;
       overflow: hidden;
       padding: 1rem;
@@ -63,15 +64,24 @@
     }
 
     &__btn {
+      background-color: $btnBackgound;
       display: grid;
       grid-column: 2/3;
       grid-row: 1/2;
-      border-radius: 15px;
-      align-items: center;
+      border: none;
+      border-radius: $borderRadius;
 
+      align-items: center;
       margin-bottom: 1rem;
       width: 10vw;
 
+      &:hover {
+        background-color: $btnHover;
+      }
+
+      &:active {
+        background-color: $btnActive;
+      }
     }
   }
 }
@@ -83,7 +93,6 @@
 @media (max-width: $midMobWidth) {
   h2 {
     font-size: $mobH1;
-
   }
 
   .feedbacks__add {

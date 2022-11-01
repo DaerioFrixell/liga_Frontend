@@ -1,8 +1,8 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { feedbacksReducer } from '../models/feedbacks/feedbacksReducer';
-import { lessonsReducer } from './lessonsReducer';
+import { lessonsReducer } from '../models/lessons/lessonsReducer';
 import createSagaMiddleware from 'redux-saga';
-import rootSaga from "../core/saga";
+import rootSaga from "./saga";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
   ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__

@@ -7,15 +7,31 @@
   display: flex;
   justify-content: space-around;
 
-  &__icon {
-    background-image: url(./inst.png);
+  &__icon-vk {
+    background-image: url(../../../assets/img/vk.png);
     background-size: cover;
-    width: 5rem;
-    height: 5rem;
+    width: 3.5rem;
+    height: 3.5rem;
     margin-left: 2.5rem;
+    opacity: .75;
+    transition: opacity, .3s;
 
     &:hover {
-      background-color: $hoverOk;
+      opacity: 1
+    }
+  }
+
+  &__icon-yt {
+    background-image: url(../../../assets/img/yt.png);
+    background-size: cover;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-left: 2.5rem;
+    opacity: .75;
+    transition: opacity, .3s;
+
+    &:hover {
+      opacity: 1
     }
   }
 
@@ -36,9 +52,14 @@
 
 @media (max-width: $smallMobWidth) {
   .nav-info {
-    &__icon {
-      width: 3.5rem;
-      height: 3.5rem;
+    &__icon-vk {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &__icon-yt {
+      width: 3rem;
+      height: 3rem;
     }
   }
 }

@@ -1,4 +1,4 @@
-import { ADD_LESSON, DELETE_LESSON } from "./types"
+import { ADD_LESSON, DELETE_LESSON } from "./lessonsAction"
 
 const initialState = {
   lessons: [

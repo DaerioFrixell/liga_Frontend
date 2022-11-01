@@ -3,7 +3,7 @@ import { React } from "react";
 import "./lessonsList.scss"
 import { connect, useDispatch } from "react-redux";
 import { Lesson } from "./Lesson/Lesson";
-import { addLessonAction } from "../../../../redux/action";
+import { addLessonAction } from "../../../../models/lessons/lessonsAction";
 
 const LessonsList = ({ lessonsArr }) => {
   // const [newLesson, newLessonDispatch] = useReducer(newLessonReducer, {

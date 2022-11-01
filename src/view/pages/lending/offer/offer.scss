@@ -1,8 +1,6 @@
-@import '../../../styles/generalStyles';
-@import '../../../styles/screenSize.scss';
-@import '../../../styles/colors.scss';
-
-
+@import "../../../styles/generalStyles";
+@import "../../../styles/screenSize.scss";
+@import "../../../styles/colors.scss";
 
 .offer {
   display: flex;
@@ -10,10 +8,11 @@
   width: 90%;
   height: 93vh;
   margin: 0 auto;
-  padding: 15% 0;
+  padding: 10% 0;
   color: #f0eeee;
 
   &__title {
+    font-size: $h1big;
     padding-bottom: 5rem;
   }
 
@@ -21,12 +20,26 @@
     padding: 0;
     padding-bottom: 1rem;
     margin: 0;
+    font-size: 2.2rem;
   }
 
-  &__button {
-    width: 33.333%;
-    height: 3.5rem;
+  &__button-link {
+    width: 25%;
+    background-color: rgba(249, 232, 210, 0.977);
+    border-radius: 10px;
+    color: #272727;
+    font-size: $smlText;
     font-weight: bold;
+    text-align: center;
+    padding: .8rem;
+
+    &:hover {
+      background-color: rgb(248, 214, 170);
+    }
+
+    &:active {
+      background-color: rgb(228, 246, 154);
+    }
   }
 
   .hidden500 {
@@ -34,31 +47,21 @@
   }
 }
 
-
-@media (max-width: $mineWidth) {
+@media (max-width: $notebookWidth) {
   .offer {
-    &__title {
-      font-size: 3rem;
-    }
-
-    &__text {
-      font-size: 2.2rem;
-    }
-
-    &__button {
-      font-size: 1.4rem;
-      width: 33.333%;
+    &__button-link {
+      font-size: $mobTextLittle;
     }
   }
 }
 
 @media (max-width: $bigMobWidth) {
   .offer {
-    max-width: $bigMobWidth;
+    padding: 5% 0;
 
     &__title {
       text-align: center;
-      font-size: $mobH1Big;
+      font-size: $mobH1;
     }
 
     &__text {
@@ -66,20 +69,18 @@
       font-size: $mobBigText;
     }
 
-    &__button {
+    &__button-link {
       margin: auto;
       width: auto;
-      height: 6rem;
-      font-size: $mobBigText;
-
+      font-size: $mobText;
     }
   }
 }
 
 @media (max-width: $midMobWidth) {
   .offer {
+    padding: 15% 0;
     max-width: $midMobWidth;
-    padding: 40% 0;
 
     &__title {
       font-size: $mobH1;
@@ -89,7 +90,7 @@
       font-size: $mobText;
     }
 
-    &__button {
+    &__button-link {
       font-size: $mobText;
       width: 40rem;
       height: 3.5rem;
@@ -98,13 +99,9 @@
 }
 
 @media (max-width: $betwMobWidth) {
-  .hidden500 {
-    display: none;
-  }
-
   .offer {
     max-width: $betwMobWidth;
-    padding: 50% 0;
+    padding: 30% 0;
 
     &__title {
       font-size: 3rem;
@@ -114,10 +111,10 @@
       font-size: 1.6rem;
     }
 
-    &__button {
-      font-size: 1.6rem;
+    &__button-link {
+      font-size: $mobTextLittle;
+      height: auto;
       width: 30rem;
-      height: 3rem;
     }
   }
 }
@@ -132,7 +129,7 @@
       font-size: $mobSmallText;
     }
 
-    &__button {
+    &__button-link {
       font-size: $mobSmallText;
       width: 20rem;
     }
