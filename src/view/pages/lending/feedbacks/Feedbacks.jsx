@@ -2,10 +2,10 @@ import { React, useState, useEffect } from "react";
 import "./feedbacks.scss";
 import { Feedback } from "./feedback/Feedback";
 import { useDispatch, useSelector } from "react-redux";
-import { getFeedbackAction } from "../../../../models/feedbacks/feedbacksAction";
+import { addFeedbackAction, getFeedbackAction } from "../../../../models/feedbacks/feedbacksAction";
 import { createFeedback } from "../../../../api/feedbackApi";
 
-const Feedbacks = () => {
+export const Feedbacks = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getFeedbackAction())
@@ -13,14 +13,17 @@ const Feedbacks = () => {
 
   const feedbacksArray = useSelector(state => state.feedbacks.feedbacks)
 
-  //добавление нового фидбэка в DB 
+  //добавление нового фидбэка в DB (+ в редакс)
   const [description, setDescription] = useState('')
   const [author, setAuthor] = useState('')
   const addNewFeedback = () => {
-    createFeedback({ author: author, description: description }).then(data => {
-      setAuthor('')
-      setDescription('')
-    })
+    createFeedback({ author: author, description: description })
+    dispatch(addFeedbackAction({
+      author,
+      description,
+    }));
+    setAuthor("")
+    setDescription("")
   }
 
   // функционал переключения фидбэков
@@ -89,7 +92,3 @@ const Feedbacks = () => {
     </section>
   )
 }
-
-
-
-export default Feedbacks;

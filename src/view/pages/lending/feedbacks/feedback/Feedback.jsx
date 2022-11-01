@@ -2,7 +2,6 @@ import React, { memo } from 'react';
 import './feedback.scss';
 
 export const Feedback = memo(({ viewFeedback }) => {
-  console.log("map comnp: ", viewFeedback)
   return (
     <div className='feedback'>
       <p className='feedback__author'>{viewFeedback.author}</p>

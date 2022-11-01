@@ -9,11 +9,10 @@ export const LendingForm = () => {
   const [comment, setComment] = useState('')
   const addNewLead = e => {
     e.preventDefault()
-    createLead({ name: name, number: number, comment: comment }).then(data => {
-      setName('')
-      setNumber('')
-      setComment('')
-    })
+    createLead({ name: name, number: number, comment: comment })
+    setName('')
+    setNumber('')
+    setComment('')
   }
 
   return (
